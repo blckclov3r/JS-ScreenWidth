@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove First</title>
+    <script defer>
+
+        var screenWidth = window.screen.availWidth;
+        var viewDTR = document.getElementById("viewDTR");
+       
+   
+       // 576px up  (phone)
+       if(screenWidth <= 576){
+           document.getElementById("device").innerHTML  = "<h3 style='color: #006699'>Device: Phone</h3>";
+           viewDTR.remove();
+       }
+   
+       // 768px up  (tablet)
+       if(screenWidth <= 768 && screenWidth > 576){
+           document.getElementById("device").innerHTML  = "<h3 style='color: #006699'>Device: Tablet</h3>";
+           viewDTR.remove();
+       }
+   
+       // 992px up (desktop)
+       if(screenWidth <= 992 && screenWidth > 768){
+           document.getElementById("device").innerHTML  = "<h3 style='color: #006699'>Device: desktop</h3>";
+       }
+   
+       // 1200px up (large desktop)
+       if(screenWidth <= 1200 && screenWidth > 992 ){
+           document.getElementById("device").innerHTML  = "<h3 style='color: #006699'>Device: large desktop</h3>";
+       }
+   
+       // 1400px up (larger desktop)
+       if(screenWidth >= 1400 && screenWidth > 1200){
+           document.getElementById("device").innerHTML  = "<h3 style='color: #006699'>Device: larger desktop</h3>";
+       }
+   
+        // imaginary data
+           setTimeout(() => {
+               if(typeof viewDTR != 'undefined' && viewDTR != null){
+                   viewDTR.innerHTML = ` <br/>
+                   <div style='border: 4px solid black; padding: 1rem;'>
+                       <h1 style='color: red'>lorem ipsum</h1>
+                   </div>`;
+               }
+       }, 3000);
+   
+   </script>
+</head>
+<body>
+    
+ <h1 style="color: green;">3000ms TIMEOUT</h1>
+ <div>If pixel is less than 768px (table) viewDTR id's container will not invoked</div>
+<div id="device"></div>
+
+
+<div id="viewDTR"></div>
+
+
+
+</body>
+</html>
